@@ -1,0 +1,64 @@
+# ─── Dependencies ────────────────────────────────────────────────────────────
+node_modules/
+
+# ─── Build Output ────────────────────────────────────────────────────────────
+dist/
+build/
+
+# ─── Environment Variables ───────────────────────────────────────────────────
+# NEVER commit real .env files. Copy .env.example and fill in your values.
+.env
+.env.local
+.env.development
+.env.staging
+.env.production
+.env.test
+.env.*.local
+*.env
+
+# ─── Logs ────────────────────────────────────────────────────────────────────
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ─── Test Coverage ───────────────────────────────────────────────────────────
+coverage/
+.nyc_output/
+
+# ─── Generated API Docs (optional: remove this line to commit the spec) ──────
+# docs/api-docs.json
+# docs/api-docs.yaml
+
+# ─── TypeORM / Legacy ────────────────────────────────────────────────────────
+ormconfig.js
+ormconfig.json
+
+# ─── OS ──────────────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ─── IDE / Editor ────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.swp
+.history/
+
+# ─── Misc ────────────────────────────────────────────────────────────────────
+.cache/
+tmp/
+temp/

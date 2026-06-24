@@ -1,0 +1,112 @@
+/* ─── Public Layout ──────────────────────────────────────────────────────── */
+.public-layout {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f8fafc 0%, #eff6ff 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+.public-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 40px;
+  background: transparent;
+}
+
+.public-brand {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.public-brand svg {
+  color: var(--primary);
+}
+
+.feedback-page {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.feedback-form-wrapper {
+  width: 100%;
+  max-width: 520px;
+  text-align: center;
+}
+
+.feedback-hero {
+  margin-bottom: 24px;
+}
+
+.feedback-hero h1 {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.feedback-hero h1 span {
+  color: var(--primary);
+}
+
+.feedback-hero p {
+  font-size: 15px;
+  color: var(--text-secondary);
+}
+
+.feedback-illustration {
+  margin-bottom: 28px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+/* Floating Illustration Animation */
+.floating-illustration {
+  filter: drop-shadow(0 15px 15px rgba(92, 62, 194, 0.08));
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.feedback-form-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 36px;
+  box-shadow: var(--shadow-lg);
+}
+
+.form-security {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.feedback-footer {
+  text-align: center;
+  padding: 32px 20px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.feedback-footer p {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--text-muted);
+}

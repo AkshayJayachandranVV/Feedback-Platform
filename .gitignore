@@ -1,0 +1,34 @@
+# ─── Root-level .gitignore (monorepo) ────────────────────────────────────────
+# Each sub-project (acowale-feedbacker-api, acowale-feedbacker-ui) also has
+# its own .gitignore for project-specific rules.
+
+# ─── Environment Variables ───────────────────────────────────────────────────
+# Catches any .env files accidentally placed at the root level
+.env
+.env.local
+.env.development
+.env.staging
+.env.production
+.env.test
+.env.*.local
+*.env
+
+# ─── OS ──────────────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+desktop.ini
+
+# ─── IDE / Editor ────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ─── Logs ────────────────────────────────────────────────────────────────────
+*.log
+npm-debug.log*
