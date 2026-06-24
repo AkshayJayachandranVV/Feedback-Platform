@@ -87,10 +87,28 @@ export class AuthService {
     };
   }
 
-  async logout(userId: string, res: Response) {
-    await this.usersService.updateRefreshToken(userId, null);
+  async logout(token: string | null, res: Response) {
+    let userId: string | null = null;
+    if (token) {
+      try {
+        const accessSecret = this.configService.get<string>('jwt.accessSecret') as string;
+        const payload = this.jwtService.verify(token, {
+          secret: accessSecret,
+          ignoreExpiration: true,
+        }) as JwtPayload;
+        userId = payload?.sub || null;
+      } catch (err: any) {
+        this.logger.warn('Failed to verify token on logout', { error: err.message });
+      }
+    }
+
+    if (userId) {
+      await this.usersService.updateRefreshToken(userId, null);
+      this.logger.info('User logged out', { userId });
+    } else {
+      this.logger.info('Anonymous/Expired logout - clearing cookies');
+    }
     this.clearTokenCookies(res);
-    this.logger.info('User logged out', { userId });
     return { success: true, message: 'Logged out successfully' };
   }
 
