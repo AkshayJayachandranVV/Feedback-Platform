@@ -626,8 +626,8 @@ tbody tr:last-child td { border-bottom: none; }
     transform: translateX(0) !important;
   }
   .main-content { margin-left: 0; }
-  .top-header { padding: 0 20px; }
-  .page-container { padding: 20px; }
+  .top-header { padding: 0 16px; }
+  .page-container { padding: 16px; }
   .stats-grid { grid-template-columns: 1fr; }
   .feedback-form-card { padding: 24px; }
   .login-card { padding: 32px 24px; }
@@ -642,6 +642,32 @@ tbody tr:last-child td { border-bottom: none; }
   .filters-bar > * {
     width: 100% !important;
     min-width: 100% !important;
+  }
+  .page-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+  .page-header > div {
+    text-align: left;
+  }
+  .page-header .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .modal-card {
+    max-width: calc(100% - 32px);
+    margin: 16px;
+    max-height: calc(100vh - 32px);
+    display: flex;
+    flex-direction: column;
+  }
+  .modal-body {
+    overflow-y: auto;
+    padding: 16px;
+  }
+  .modal-header, .modal-footer {
+    padding: 16px;
   }
 }
 

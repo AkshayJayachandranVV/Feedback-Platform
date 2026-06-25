@@ -222,3 +222,25 @@
   color: var(--text-secondary);
   background: var(--bg-surface);
 }
+
+/* ─── Responsive Admin Layout ────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .header-search {
+    display: none;
+  }
+  .top-header {
+    padding: 0 16px;
+  }
+  .header-actions {
+    gap: 12px;
+  }
+  .profile-info {
+    display: none;
+  }
+  .admin-footer {
+    padding: 16px;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+}
