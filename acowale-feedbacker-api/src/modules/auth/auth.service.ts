@@ -132,26 +132,33 @@ export class AuthService {
   }
 
   private setTokenCookies(res: Response, accessToken: string, refreshToken: string) {
-    const isProduction = this.configService.get<string>('app.nodeEnv') === 'production';
-
     res.cookie('access_token', accessToken, {
       httpOnly: true,
-      secure: isProduction,
-      sameSite: 'strict',
+      secure: true, // Required for cross-site cookies
+      sameSite: 'none', // Required for cross-site cookies (Vercel -> Render)
       maxAge: 15 * 60 * 1000, // 15 minutes
     });
 
     res.cookie('refresh_token', refreshToken, {
       httpOnly: true,
-      secure: isProduction,
-      sameSite: 'strict',
+      secure: true,
+      sameSite: 'none',
       path: '/api/v1/auth/refresh',
       maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
     });
   }
 
   private clearTokenCookies(res: Response) {
-    res.clearCookie('access_token');
-    res.clearCookie('refresh_token', { path: '/api/v1/auth/refresh' });
+    res.clearCookie('access_token', {
+      httpOnly: true,
+      secure: true,
+      sameSite: 'none',
+    });
+    res.clearCookie('refresh_token', {
+      httpOnly: true,
+      secure: true,
+      sameSite: 'none',
+      path: '/api/v1/auth/refresh'
+    });
   }
 }
